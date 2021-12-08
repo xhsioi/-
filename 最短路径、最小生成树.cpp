@@ -36,9 +36,9 @@ public:
             return;
         }
         else if(length[root[v]]<length[root[u]]){
-            int rt=root[v];//È¡³övÖÐËùÓÐµÄÔªËØ
-            length[root[u]]+=length[rt];//ÐÞ¸ÄµÈ¼ÛÀàÖÐuµÄ³¤¶È£¬×îºóµÃµ½µÄºÏ²¢¼¯ÊÇu
-            root[rt]=root[u];//vÖÐËùÓÐµÄÔªËØµÄ´ú±í±àºÅÔÚuÖÐµÄ±í´ï¡£
+            int rt=root[v];//å–å‡ºvä¸­æ‰€æœ‰çš„å…ƒç´ 
+            length[root[u]]+=length[rt];//ä¿®æ”¹ç­‰ä»·ç±»ä¸­uçš„é•¿åº¦ï¼Œæœ€åŽå¾—åˆ°çš„åˆå¹¶é›†æ˜¯u
+            root[rt]=root[u];//vä¸­æ‰€æœ‰çš„å…ƒç´ çš„ä»£è¡¨ç¼–å·åœ¨uä¸­çš„è¡¨è¾¾ã€‚
             for(int j=next[rt];j!=rt;j=next[j]){
                 root[j]=root[u];
             }
@@ -103,7 +103,7 @@ public:
         return true;
     }
     void siftdown(int i){
-        //¼ÙÉèiµÄ×óÓÒ×ÓÊ÷ÒÑ¾­ÊÇ×îÐ¡¶ÑÁË£»
+        //å‡è®¾içš„å·¦å³å­æ ‘å·²ç»æ˜¯æœ€å°å †äº†ï¼›
         while(i<=(n-2)/2){
             int left=2*i+1;
             int right=2*i+2;
@@ -276,7 +276,7 @@ public:
                 }
             }
             else{
-                cout<<"²»ÄÜÉú³É×îÐ¡Éú³ÉÊ÷"<<endl;
+                cout<<"ä¸èƒ½ç”Ÿæˆæœ€å°ç”Ÿæˆæ ‘"<<endl;
                 return;
             }
         }
@@ -306,7 +306,7 @@ public:
             }
         }
         if(dist[N-1]==INF){
-            cout<<"ÎÞ×î¶ÌÂ·¾¶"<<endl;
+            cout<<"æ— æœ€çŸ­è·¯å¾„"<<endl;
         }
         else{
             for(int i=0;i<N;i++){
